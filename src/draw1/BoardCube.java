@@ -2,6 +2,7 @@ package draw1;
 
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,41 +14,37 @@ import javax.swing.JPanel;
  * @author David Jennings
  */
 class BoardCube extends JButton {
-    int counter = 0;
+   int counter ;
 
     public BoardCube(){
+        this.setFont(new Font("Arial", Font.PLAIN, 200));
+        //this.setText("x");
         this.setSize(200, 200);
+        counter = 0;
         
         this.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                //Execute when button is pressed
+                
+                if(counter == 0 ){
+                    setText("");
+                    counter = 1;
+                    setText("x");
+                    return;
+            }
+                else if(counter == 1){
+                    setText("");
+                    counter = 0;
+                    setText("o");
+                    return;
+            }
                 
             }
         });
         
     }
     
-protected void paintComponent(Graphics graph) {
 
-            super.paintComponent(graph);
-            graph.setColor(Color.blue);
-//            if(counter == 0 ||counter == 2){
-//                counter = 1;
-//                this.repaint();
-//            graph.drawLine(0, 0, 200, 200);
-//            graph.drawLine(0, 200, 200, 0);
-//            }
-            
-            if(counter == 1){
-                this.repaint();
-                counter = 2;
-            graph.drawOval(20, 20, 150, 150);
-            }
-
-        
-            
-        }
 
     
         

@@ -9,12 +9,14 @@ import javax.swing.JFrame;
  *
  * @author David Jennings
  */
-public class Draw1 extends JFrame implements ActionListener {
+public class Draw1 extends JFrame {
 
     public Draw1() {
 
         this.setLayout(new GridLayout(3, 3));
         for (int i = 0; i < 9; i++) {
+           
+            
             this.add(new BoardCube());
         }
 
@@ -30,9 +32,6 @@ public class Draw1 extends JFrame implements ActionListener {
 
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
 }
