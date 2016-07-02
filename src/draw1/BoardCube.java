@@ -14,29 +14,42 @@ import javax.swing.JPanel;
  * @author David Jennings
  */
 class BoardCube extends JButton {
-   int counter ;
+   static int counter ;
 
     public BoardCube(){
         this.setFont(new Font("Arial", Font.PLAIN, 200));
-        //this.setText("x");
+        this.setText("x");
         this.setSize(200, 200);
-        counter = 0;
+        
         
         this.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
                 
                 if(counter == 0 ){
+                    if(getText() == "x"){
+                        
+                        setText("o");
+                    }
+                    else{
                     setText("");
                     counter = 1;
                     setText("x");
                     return;
+                    }
             }
                 else if(counter == 1){
+                    
+                    if(getText() == "o"){
+                        
+                        setText("x");
+                    }
+                    else{
                     setText("");
                     counter = 0;
                     setText("o");
                     return;
+                    }
             }
                 
             }
